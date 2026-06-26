@@ -101,46 +101,46 @@ const Storage = {
 //  ДЕМО-ДАННЫЕ
 // ============================================================
 
-function seedDemoData() {
-    const results = Storage.getResults();
-    if (results.length > 0) return;
+// function seedDemoData() {
+//     const results = Storage.getResults();
+//     if (results.length > 0) return;
 
-    const demoData = [];
-    const now = new Date();
+//     const demoData = [];
+//     const now = new Date();
 
-    for (let i = 0; i < 12; i++) {
-        const daysAgo = Math.floor(Math.random() * 14);
-        const date = new Date(now);
-        date.setDate(date.getDate() - daysAgo);
-        date.setHours(Math.floor(Math.random() * 14) + 8, Math.floor(Math.random() * 60));
+//     for (let i = 0; i < 12; i++) {
+//         const daysAgo = Math.floor(Math.random() * 14);
+//         const date = new Date(now);
+//         date.setDate(date.getDate() - daysAgo);
+//         date.setHours(Math.floor(Math.random() * 14) + 8, Math.floor(Math.random() * 60));
 
-        const regime = Math.floor(Math.random() * 13) + 4;
-        const fastfood = Math.floor(Math.random() * 10) + 3;
-        const concentration = Math.floor(Math.random() * 10) + 3;
-        const total = regime + fastfood + concentration;
+//         const regime = Math.floor(Math.random() * 13) + 4;
+//         const fastfood = Math.floor(Math.random() * 10) + 3;
+//         const concentration = Math.floor(Math.random() * 10) + 3;
+//         const total = regime + fastfood + concentration;
         
-        let verdict;
-        const ratio = total / 40;
-        if (ratio >= 0.8) verdict = "excellent";
-        else if (ratio >= 0.6) verdict = "good";
-        else if (ratio >= 0.4) verdict = "average";
-        else verdict = "poor";
+//         let verdict;
+//         const ratio = total / 40;
+//         if (ratio >= 0.8) verdict = "excellent";
+//         else if (ratio >= 0.6) verdict = "good";
+//         else if (ratio >= 0.4) verdict = "average";
+//         else verdict = "poor";
 
-        demoData.push({
-            date: date.toISOString(),
-            totalScore: total,
-            regime: regime,
-            fastfood: fastfood,
-            concentration: concentration,
-            verdict: verdict,
-            isMine: Math.random() > 0.7
-        });
-    }
+//         demoData.push({
+//             date: date.toISOString(),
+//             totalScore: total,
+//             regime: regime,
+//             fastfood: fastfood,
+//             concentration: concentration,
+//             verdict: verdict,
+//             isMine: Math.random() > 0.7
+//         });
+//     }
 
-    localStorage.setItem(DB_KEY, JSON.stringify(demoData));
-    console.log('📊 Добавлены демо-данные (12 записей)');
-}
+//     localStorage.setItem(DB_KEY, JSON.stringify(demoData));
+//     console.log('📊 Добавлены демо-данные (12 записей)');
+// }
 
 // Глобальные функции для совместимости
 window.Storage = Storage;
-window.seedDemoData = seedDemoData;
+//window.seedDemoData = seedDemoData;
